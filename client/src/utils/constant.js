@@ -1,4 +1,5 @@
-export const USER_API = "http://localhost:3000/api/user";
-export const JOB_API = "http://localhost:3000/api/job";
-export const APPLICATION_API = "http://localhost:3000/api/application";
-export const COMPANY_API = "http://localhost:3000/api/company";
+export const USER_API = "https://job-portal-m198.onrender.com/api/user";
+export const JOB_API = "https://job-portal-m198.onrender.com/api/job";
+export const APPLICATION_API =
+  "https://job-portal-m198.onrender.com/application";
+export const COMPANY_API = "https://job-portal-m198.onrender.com/api/company";
