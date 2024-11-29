@@ -103,12 +103,21 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    return res.status(200).cookie("token", "", { maxAge: 0 }).json({
-      message: "user logout succssfully",
-      success: true,
-    });
+    return res
+      .status(200)
+      .cookie("token", "", {
+        maxAge: 0,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+        sameSite: "none",
+      })
+      .json({
+        message: "User logged out successfully",
+        success: true,
+      });
   } catch (error) {
-    console.log(error);
+    console.error("Logout Error:", error);
+    res.status(500).json({ message: "Server error", success: false });
   }
 };
 
