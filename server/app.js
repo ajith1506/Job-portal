@@ -14,13 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const corsOption = {
-  origin: ["http://localhost:5173", "https://ak-job-portal.netlify.app"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
-
-app.use(cors(corsOption));
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 
